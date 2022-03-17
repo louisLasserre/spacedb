@@ -1,0 +1,11 @@
+{
+  "name": "spacedb",
+  "version": "1.0.0",
+  "description": "bdd du projet space",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "louis",
+  "license": "ISC"
+}
