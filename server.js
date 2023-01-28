@@ -5,6 +5,15 @@ const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 3200; // <== You can change the port
 
 server.use(middlewares);
-server.use(router);
+server.use((req, res, next) => {
+  if (req.method != 'GET') { // add your authorization logic here
+    res.sendStatus(401)
+  } else {
+    next() // continue to JSON Server router
+  }
+})
 
-server.listen(port);
+server.use(router);
+server.listen(port, () => {
+  console.log('server is running');
+});
